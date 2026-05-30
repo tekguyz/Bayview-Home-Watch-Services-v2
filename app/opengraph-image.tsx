@@ -25,7 +25,7 @@ export default async function Image() {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "6px", background: "#00ADAC" }} />
 
         {/* Icon placeholder (simplified house SVG inline) */}
-        <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "32px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "36px" }}>
           <div style={{ width: 72, height: 72, background: "#00ADAC", borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
               <path d="M22 6L38 18V38H28V27H16V38H6V18L22 6Z" fill="white" />
@@ -39,12 +39,25 @@ export default async function Image() {
           </div>
         </div>
 
-        <h1 style={{ color: "white", fontSize: "52px", fontWeight: "900", textAlign: "center", lineHeight: 1.1, letterSpacing: "-0.025em", margin: "0 0 20px", maxWidth: "900px" }}>
-          Your South Florida Home,<br />
+        {/* Structured Headline using Flex Column layout for guaranteed line breaking */}
+        <h1 style={{ 
+          color: "white", 
+          fontSize: "54px", 
+          fontWeight: "900", 
+          textAlign: "center", 
+          lineHeight: 1.25, 
+          letterSpacing: "-0.025em", 
+          margin: "0 0 24px", 
+          maxWidth: "950px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
+        }}>
+          <span>Your South Florida Home,</span>
           <span style={{ color: "#00ADAC" }}>Always in Good Hands.</span>
         </h1>
 
-        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "22px", textAlign: "center", margin: "0 0 36px", maxWidth: "700px", lineHeight: 1.5 }}>
+        <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "22px", textAlign: "center", margin: "0 0 40px", maxWidth: "700px", lineHeight: 1.5 }}>
           Professional home watch services for Broward County homeowners.
         </p>
 
@@ -56,7 +69,7 @@ export default async function Image() {
 
         {/* Bottom bar */}
         <div style={{ position: "absolute", bottom: "28px", color: "rgba(255,255,255,0.4)", fontSize: "14px", letterSpacing: "0.1em" }}>
-          bayview-home-watch-services.vercel.app
+          bayviewhomewatchservices.com
         </div>
       </div>
     ),

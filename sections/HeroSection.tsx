@@ -95,7 +95,7 @@ export function HeroSection() {
           >
             <button
               onClick={handlePrimaryClick}
-              className="bg-teal text-navy hover:bg-teal/90 px-7 py-3.5 rounded-full font-bold text-[1rem] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-lg shadow-navy/30"
+              className="bg-teal text-navy hover:bg-teal/90 px-7 py-3.5 rounded-full font-bold text-[1rem] transition-all duration-200 md:hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-lg shadow-navy/30"
             >
               Get a Free Consultation
             </button>

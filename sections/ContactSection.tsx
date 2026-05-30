@@ -3,14 +3,13 @@
 import React from "react";
 import { Phone, Mail, CheckCircle } from "lucide-react";
 import { ContactForm } from "@/components/molecules/ContactForm";
-import { SITE, TRUST_SIGNALS } from "@/constants";
+import { SITE, CONTACT_TRUST_SIGNALS } from "@/constants";
 import { SectionWrapper } from "@/components/atoms/SectionWrapper";
 import { Container } from "@/components/atoms/Container";
 import { SectionLabel } from "@/components/atoms/SectionLabel";
 
 export function ContactSection() {
-  // Take 4 items from TRUST_SIGNALS for this list as requested by the prompt
-  const selectedTrustSignals = TRUST_SIGNALS.slice(0, 4);
+  const selectedTrustSignals = CONTACT_TRUST_SIGNALS;
 
   return (
     <SectionWrapper id="contact" className="bg-cream">

@@ -26,11 +26,11 @@ export function AboutSection() {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             className="relative"
           >
-            {/* Main image */}
-            <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-2xl">
+            {/* Main image container */}
+            <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80"
-                alt="South Florida coastal home — the kind Bayview watches over"
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                alt="South Florida coastal home — watched over by Bayview"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -40,28 +40,25 @@ export function AboutSection() {
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-teal/10" />
             </div>
 
-            {/* Floating trust badge */}
+            {/* Floating trust badge — 30% on image, 70% hanging down on mobile, cleanly offset on desktop */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 10 }}
-              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.55, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-5 sm:-right-5 z-10 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl ring-1 ring-black/5"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[70%] md:left-auto md:right-[-20px] md:bottom-[-20px] md:translate-x-0 md:translate-y-0 z-10 flex items-center gap-2.5 rounded-2xl bg-white px-4 py-2.5 md:px-5 md:py-4 shadow-xl ring-1 ring-black/5"
             >
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-teal/10">
-                <ShieldCheck className="text-teal-dark" size={26} strokeWidth={1.75} />
+              <div className="flex h-9 w-9 md:h-12 md:w-12 flex-shrink-0 items-center justify-center rounded-xl bg-teal/10">
+                <ShieldCheck className="text-teal-dark w-4.5 h-4.5 md:w-6 md:h-6" strokeWidth={1.75} />
               </div>
-              <div>
-                <p className="font-display text-sm font-bold text-ink">
+              <div className="min-w-0 flex flex-col justify-center text-left">
+                <p className="font-display text-xs md:text-sm font-bold text-ink whitespace-nowrap leading-none">
                   Licensed &amp; Insured
                 </p>
-                <p className="mt-0.5 text-xs text-ink/65">Broward County, Florida</p>
+                <p className="mt-1 md:mt-1.5 text-[10px] md:text-xs text-ink/65 whitespace-nowrap leading-none">
+                  Broward County, Florida
+                </p>
               </div>
             </motion.div>
-
-            {/* Owner photo placeholder note */}
-            <p className="mt-8 text-center text-xs italic text-ink/35">
-              Owner photo coming soon — this is the South Florida we protect.
-            </p>
           </motion.div>
 
           {/* Right — Copy */}

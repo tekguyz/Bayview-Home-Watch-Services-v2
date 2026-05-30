@@ -61,7 +61,7 @@ export function ContactForm() {
   };
 
   const inputStyle =
-    "w-full bg-white border border-cream-dark focus:border-teal focus:ring-2 focus:ring-teal/20 rounded-xl px-4 py-3 outline-none text-ink placeholder:text-ink-soft/40 transition-all font-body text-sm duration-200 select-all appearance-none min-h-[44px]";
+    "w-full bg-white border border-cream-dark focus:border-teal focus:ring-2 focus:ring-teal/20 rounded-xl px-4 py-3 outline-none text-ink placeholder:text-ink-soft/40 transition-all font-body text-base md:text-sm duration-200 select-all appearance-none min-h-[44px]";
 
   const labelStyle = "block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5 font-body select-none";
 

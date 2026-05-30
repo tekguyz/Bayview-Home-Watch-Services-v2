@@ -194,6 +194,13 @@ export const TRUST_SIGNALS = [
   "Detail-Obsessed Since Day One",
 ];
 
+export const CONTACT_TRUST_SIGNALS = [
+  "Licensed & Insured",
+  "Woman-Owned Business",
+  "Broward County Local",
+  "Photo Reports Every Visit",
+];
+
 export const SERVICE_AREA = {
   headline: "Proudly Serving Broward County",
   subheadline: "From the beach to the bay — we keep South Florida homes protected.",

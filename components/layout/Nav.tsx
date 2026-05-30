@@ -39,7 +39,9 @@ export function Nav() {
 
   const handleCtaClick = () => {
     setSheetOpen(false);
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }, 250);
   };
 
   const [activeSection, setActiveSection] = useState("");
@@ -112,7 +114,7 @@ export function Nav() {
             </a>
             <button
               onClick={handleCtaClick}
-              className="bg-teal text-navy font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-teal/90 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-sm"
+              className="bg-teal text-navy font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-teal/90 md:hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-sm"
             >
               Get a Free Consultation
             </button>
@@ -167,9 +169,12 @@ export function Nav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     setSheetOpen(false);
-                    document.getElementById(link.href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+                    setTimeout(() => {
+                      document.getElementById(link.href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
+                    }, 250);
                   }}
                   className="text-base text-white/90 hover:text-teal font-medium py-4 border-b border-white/10 transition-colors"
                 >

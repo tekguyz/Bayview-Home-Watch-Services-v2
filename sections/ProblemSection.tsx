@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import { Droplets, Thermometer, Leaf, Bug, Package, Car, CheckCircle } from "lucide-react";
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { PROBLEM_ITEMS } from "@/constants";
 import { SectionWrapper } from "@/components/atoms/SectionWrapper";
 import { Container } from "@/components/atoms/Container";
@@ -19,9 +19,6 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function ProblemSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.15 });
-
   const handleScrollToServices = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
@@ -31,7 +28,7 @@ export function ProblemSection() {
     <SectionWrapper id="problem" className="bg-cream">
       <Container>
         {/* Two-column Layout on lg+ */}
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column (Content) */}
           <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -52,7 +49,7 @@ export function ProblemSection() {
                 return (
                   <div
                     key={index}
-                    className="flex items-start gap-3.5 bg-white rounded-xl p-4 shadow-sm border border-cream-dark border-l-4 border-l-[oklch(62%_0.18_28/0.65)] hover:shadow-md transition-all duration-200 text-left"
+                    className="flex items-start gap-3.5 bg-white rounded-xl p-4 shadow-sm border border-cream-dark border-l-4 border-l-coral/65 hover:shadow-md transition-all duration-200 text-left"
                   >
                     <div className="bg-coral/10 rounded-full p-2 shrink-0 flex items-center justify-center">
                       {IconComponent ? (
@@ -88,7 +85,8 @@ export function ProblemSection() {
               {/* Floating "Badge" Resolution Card */}
               <motion.div
                 initial={{ opacity: 0, y: 12, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-10%" }}
                 transition={{ delay: 0.5, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 className="absolute bottom-5 left-5 z-10 bg-white rounded-xl shadow-xl px-5 py-4 flex items-center gap-3 ring-1 ring-black/5"
               >

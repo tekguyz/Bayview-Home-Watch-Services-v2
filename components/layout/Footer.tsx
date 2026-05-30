@@ -56,7 +56,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Bayview Home Watch Services on Facebook"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal hover:scale-105 transition-all"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal md:hover:scale-105 transition-all"
               >
                 <Facebook className="w-4.5 h-4.5" />
               </a>
@@ -65,7 +65,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal hover:scale-105 transition-all"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal md:hover:scale-105 transition-all"
               >
                 <Instagram className="w-4.5 h-4.5" />
               </a>
@@ -74,7 +74,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect on LinkedIn"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal hover:scale-105 transition-all"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal md:hover:scale-105 transition-all"
               >
                 <Linkedin className="w-4.5 h-4.5" />
               </a>
@@ -83,7 +83,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Bayview Home Watch Services on Google"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal hover:scale-105 transition-all"
+                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-teal hover:border-teal md:hover:scale-105 transition-all"
               >
                 <Globe className="w-4.5 h-4.5" />
               </a>

@@ -29,7 +29,7 @@ export function AboutSection() {
             {/* Main image */}
             <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80"
                 alt="South Florida coastal home — the kind Bayview watches over"
                 fill
                 className="object-cover object-center"

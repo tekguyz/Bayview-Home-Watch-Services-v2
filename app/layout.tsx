@@ -21,13 +21,9 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bayviewhomewatchservices.com"),
-  title: {
-    default: "Bayview Home Watch Services | South Florida Home Watch",
-    template: "%s | Bayview Home Watch Services",
-  },
-  description:
-    "Professional home watch services for South Florida homeowners. Regular check-ins, storm prep, vendor coordination, and total peace of mind while you're away. Serving Broward County.",
+  metadataBase: new URL("https://bayview-home-watch-services.vercel.app"),
+  title: "Bayview Home Watch Services | Trusted South Florida Home Watch",
+  description: "Professional, trusted home watch services in South Florida. Someone's gotta make sure your paradise doesn't turn into a project.",
   keywords: [
     "home watch services South Florida",
     "Broward County home watch",
@@ -40,20 +36,26 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bayview Home Watch Services" }],
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://bayviewhomewatchservices.com",
+    title: "Bayview Home Watch Services",
+    description: "Someone's Gotta Make Sure Your Paradise Doesn't Turn Into a Project.",
+    url: "https://bayview-home-watch-services.vercel.app",
     siteName: "Bayview Home Watch Services",
-    title: "Bayview Home Watch Services | South Florida Home Watch",
-    description:
-      "Professional home watch services for South Florida homeowners. Serving Broward County from the beach to the bay.",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Bayview Home Watch Services" }],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bayview Home Watch Services South Florida",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Bayview Home Watch Services",
-    description: "Professional home watch services for South Florida homeowners.",
-    images: ["/opengraph-image"],
+    description: "Professional home watch services in South Florida.",
+    images: ["/og-image.jpg"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   icons: {
@@ -82,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: "Bayview Home Watch Services",
               legalName: "Bayview Home Watch Services, LLC",
               description: "Professional home watch services for South Florida homeowners in Broward County.",
-              url: "https://bayviewhomewatchservices.com",
+              url: "https://bayview-home-watch-services.vercel.app",
               telephone: "+12036413342",
               email: "bayviewhomewatchservices@gmail.com",
               address: {

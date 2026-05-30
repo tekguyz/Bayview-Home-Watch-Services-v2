@@ -56,7 +56,7 @@ export default async function Image() {
 
         {/* Bottom bar */}
         <div style={{ position: "absolute", bottom: "28px", color: "rgba(255,255,255,0.4)", fontSize: "14px", letterSpacing: "0.1em" }}>
-          bayviewhomewatchservices.com
+          bayview-home-watch-services.vercel.app
         </div>
       </div>
     ),

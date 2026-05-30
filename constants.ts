@@ -9,7 +9,7 @@ export const SITE = {
   phoneHref: "tel:+12036413342",
   email: "bayviewhomewatchservices@gmail.com",
   emailHref: "mailto:bayviewhomewatchservices@gmail.com",
-  url: "https://bayviewhomewatchservices.com",
+  url: "https://bayview-home-watch-services.vercel.app",
   address: {
     county: "Broward County",
     state: "Florida",

@@ -1,6 +1,19 @@
 <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .background-circle {
+      fill: #1B2B50;
+      transition: fill 0.3s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      .background-circle {
+        fill: #0F172A;
+        stroke: #00ADAC;
+        stroke-width: 1.5;
+      }
+    }
+  </style>
   <!-- Navy background circle -->
-  <circle cx="22" cy="22" r="22" fill="#1B2B50" />
+  <circle cx="22" cy="22" r="21.2" class="background-circle" />
 
   <!-- House Outline (White) -->
   <path

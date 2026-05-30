@@ -1,0 +1,6 @@
+{
+  "name": "Bayview Home Watch Services",
+  "description": "Professional home watch services for South Florida seasonal homeowners in Broward County. Regular checks, storm prep, and total peace of mind.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

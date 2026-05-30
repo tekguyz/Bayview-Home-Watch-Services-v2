@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-navy:         oklch(22% 0.08 248);
+  --color-navy-light:   oklch(30% 0.09 248);
+  --color-teal:         oklch(66% 0.13 192);
+  --color-teal-dark:    oklch(47% 0.12 192);
+  --color-teal-light:   oklch(88% 0.07 192);
+  --color-cream:        oklch(96.5% 0.012 80);
+  --color-cream-dark:   oklch(92% 0.018 80);
+  --color-ink:          oklch(18% 0.06 248);
+  --color-ink-soft:     oklch(45% 0.05 248);
+  --color-inverse:      oklch(97% 0.01 80);
+  --color-coral:        oklch(68% 0.16 35);
+
+  /* Typography Families */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-script:  var(--font-dancing), cursive;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+
+  /* Radius */
+  --radius-pill: 9999px;
+  --radius-card: 1rem;
+  --radius-sm:   0.5rem;
+}
+
+/* ============================================================
+   OKLCH fallbacks for browsers that don't support oklch()
+   Covers: Safari < 15.4, older Firefox, Samsung Internet
+   ============================================================ */
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    --color-navy:        #1B2B50;
+    --color-navy-light:  #243860;
+    --color-teal:        #00A9A8;
+    --color-teal-dark:   #006E6D;
+    --color-teal-light:  #D6F0EF;
+    --color-cream:       #F6F1EA;
+    --color-cream-dark:  #EBE3D8;
+    --color-ink:         #0F1D38;
+    --color-ink-soft:    #556070;
+    --color-inverse:     #F8F5F0;
+    --color-coral:       #C0432A;
+  }
+}
+
+/* ============================================================
+   Focus visible — keyboard navigation accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid oklch(64% 0.13 192);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Fluid Typography */
+@utility text-hero {
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+@utility text-hero-script {
+  font-size: clamp(3.2rem, 8vw, 6.25rem);
+  line-height: 1.0;
+}
+@utility text-display {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+@utility text-section-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+@utility text-body-lg {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.75;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for fixed nav — prevents section headings hiding behind navbar */
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+}
+body {
+  font-family: var(--font-body);
+  color: oklch(18% 0.06 248);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar but keep scroll functionality — used by services tabs */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Touch-friendly minimum tap target */
+@utility touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+

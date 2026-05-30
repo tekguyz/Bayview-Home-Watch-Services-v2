@@ -1,0 +1,49 @@
+<svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy background circle -->
+  <circle cx="22" cy="22" r="22" fill="#1B2B50" />
+
+  <!-- House Outline (White) -->
+  <path
+    d="M12 22 L22 13 L32 22 V31 H12 Z"
+    stroke="#FFFFFF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- Eye Eyelids (White) -->
+  <path
+    d="M17 24.5 Q22 21 27 24.5"
+    stroke="#FFFFFF"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <path
+    d="M17 24.5 Q22 28 27 24.5"
+    stroke="#FFFFFF"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+
+  <!-- Eye Pupil (Teal) -->
+  <circle cx="22" cy="24.5" r="2.2" fill="#00ADAC" />
+
+  <!-- Wave Curves Below House (Teal) -->
+  <path
+    d="M11 34 Q16.5 32 22 34 T33 34"
+    stroke="#00ADAC"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <path
+    d="M11 37 Q16.5 35 22 37 T33 37"
+    stroke="#00ADAC"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>

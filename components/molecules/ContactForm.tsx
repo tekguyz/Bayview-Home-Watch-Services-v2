@@ -30,6 +30,19 @@ export function ContactForm() {
     },
   });
 
+  const scrollIntoViewWithOffset = () => {
+    setTimeout(() => {
+      const container = document.getElementById("contact-form-container");
+      if (container) {
+        // Offset 100px to account for the fixed header
+        const yOffset = -100;
+        const rect = container.getBoundingClientRect();
+        const y = rect.top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 120);
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
     try {
@@ -47,17 +60,21 @@ export function ContactForm() {
         setSubmittedName(data.name);
         setStatus("success");
         reset();
+        scrollIntoViewWithOffset();
       } else {
         setStatus("error");
+        scrollIntoViewWithOffset();
       }
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");
+      scrollIntoViewWithOffset();
     }
   };
 
   const handleRetry = () => {
     setStatus("idle");
+    scrollIntoViewWithOffset();
   };
 
   const inputStyle =
@@ -66,7 +83,7 @@ export function ContactForm() {
   const labelStyle = "block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5 font-body select-none";
 
   return (
-    <>
+    <div id="contact-form-container" className="scroll-mt-24">
       {/* Screen reader announcements for form state changes */}
       <div
         role="status"
@@ -343,6 +360,6 @@ export function ContactForm() {
 
     </form>
       )}
-    </>
+    </div>
   );
 }

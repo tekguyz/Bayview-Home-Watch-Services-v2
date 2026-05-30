@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Eye, Home, CloudLightning, Users, CalendarDays } from "lucide-react";
 import { SERVICES } from "@/constants";
 import { SectionWrapper } from "@/components/atoms/SectionWrapper";
@@ -23,6 +23,7 @@ export function ServicesSection() {
   const [activeTab, setActiveTab] = useState(() => {
     return SERVICES.length > 0 ? getCategorySlug(SERVICES[0].category) : "";
   });
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,6 +59,23 @@ export function ServicesSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smoothly center the active tab button within the horizontal scrolling list if on mobile
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    const activeBtn = document.getElementById(`tab-${activeTab}`);
+    if (container && activeBtn) {
+      const containerRect = container.getBoundingClientRect();
+      const btnRect = activeBtn.getBoundingClientRect();
+      const relativeLeft = btnRect.left - containerRect.left + container.scrollLeft;
+      const scrollTarget = relativeLeft - (containerRect.width / 2) + (btnRect.width / 2);
+      
+      container.scrollTo({
+        left: scrollTarget,
+        behavior: "smooth",
+      });
+    }
+  }, [activeTab]);
+
   const handleTabClick = (categoryName: string) => {
     const slug = getCategorySlug(categoryName);
     setActiveTab(slug);
@@ -89,7 +107,7 @@ export function ServicesSection() {
 
         {/* Category Navigation — Fixed Edge-to-Edge Scrolling Layout */}
         <div className="sticky top-[72px] z-30 -mx-[clamp(1.25rem,5vw,3rem)] py-3 bg-white/95 backdrop-blur-md border-b border-cream-dark mb-10">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide px-[clamp(1.25rem,5vw,3rem)] pb-1 flex-nowrap select-none items-center justify-start md:justify-center">
+          <div ref={scrollContainerRef} className="flex gap-2 overflow-x-auto scrollbar-hide px-[clamp(1.25rem,5vw,3rem)] pb-1 flex-nowrap select-none items-center justify-start md:justify-center">
             {SERVICES.map((cat) => {
               const slug = getCategorySlug(cat.category);
               const isActive = activeTab === slug;
@@ -98,6 +116,7 @@ export function ServicesSection() {
               return (
                 <button
                   key={cat.category}
+                  id={`tab-${slug}`}
                   onClick={() => handleTabClick(cat.category)}
                   className={`flex items-center gap-2 flex-shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-sm cursor-pointer border ${
                     isActive

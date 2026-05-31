@@ -37,6 +37,12 @@ export function Nav() {
     };
   }, [sheetOpen]);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setSheetOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleCtaClick = () => {
     setSheetOpen(false);
     setTimeout(() => {
@@ -73,8 +79,14 @@ export function Nav() {
         }`}
       >
         <Container className="flex items-center justify-between">
-          {/* Logo Component */}
-          <Logo variant="light" size="md" />
+          {/* Logo Component wrapped in a smooth scroll-to-top button */}
+          <button
+            onClick={handleLogoClick}
+            className="cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/50 rounded-lg transition-transform duration-200"
+            aria-label="Scroll to top of page"
+          >
+            <Logo variant="light" size="md" />
+          </button>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -152,7 +164,13 @@ export function Nav() {
           <div>
             {/* Header with Logo and Close Button */}
             <div className="flex items-center justify-between mb-8">
-              <Logo variant="light" size="sm" />
+              <button
+                onClick={handleLogoClick}
+                className="cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/50 rounded-lg"
+                aria-label="Scroll to top of page"
+              >
+                <Logo variant="light" size="sm" />
+              </button>
 
               <button
                 onClick={() => setSheetOpen(false)}
